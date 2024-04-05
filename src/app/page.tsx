@@ -1,12 +1,10 @@
-import Dashboard from '../components/DashBoard';
-import React from 'react';
+"use client"
+import NewsProvider from './utils/NewsProvider';
 
 export default function Home() {
   return (
-    <main >
-      <div>
-      <Dashboard />
-      </div>
+    <main className="bg-slate-400">
+      <NewsProvider />
     </main>
   );
 }

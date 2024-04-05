@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Dashboard from '../components/DashBoard';
 
 interface Article {
+    author: string;
     title: string;
     description: string;
+    url: string;
+    urlToImage: string;
+    publishedAt: string;
+    content: string;
 }
 
 const NewsProvider: React.FC = () => {
@@ -30,14 +36,11 @@ const NewsProvider: React.FC = () => {
 
     return (
         <div>
-            {articles.map((article, index) => (
-                <div key={index}>
-                    <h2>{article.title}</h2>
-                    <p>{article.description}</p>
-                </div>
-            ))}
+            <Dashboard title="NEWS BLOG" description="Find the newest news all the time!" articles={articles} />
         </div>
     );
 };
 
 export default NewsProvider;
+
+
